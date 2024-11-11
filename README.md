@@ -31,16 +31,19 @@ User Interface (UI): Features buttons, status indicators, and feedback messages 
 **Procedures and Concepts Implemented**
 
 Timer Management: Timed tasks were used in the game for memory and speed challenges.
+
 Real-time Event Handling: The game dynamically adjusts based on real-world time (day/night cycle).
 
 **User Interaction**
 
 Button Interactions: Developed interactive buttons (like "Click it") that start timers or switch between scenes.
+
 Timed Events: Timers trigger different game states, providing countdowns for the player to react to.
 
 **UI/UX Design**
 
 Dark Mode: Integrated a toggle switch for light/dark modes to enhance visual appeal and user experience.
+
 Responsive UI Elements: Adjusted UI based on the current game mode (day/night), with proper alignment of elements like icons.
 
 **Concepts Applied:**
