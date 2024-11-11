@@ -17,9 +17,13 @@ Gameplay: A puzzle game focusing on memorization skills and pressure-based chall
 **Game Functions:**
 
 Main Gameplay Loop: Players complete memory puzzles to hack into systems and unlock information about Mr. Breast’s dark deeds.
+
 Puzzle Mechanics: Includes logic challenges and timed memory tasks that test the player's ability to retain and recall patterns under pressure.
+
 Progression: Unlock new puzzles and challenges as the player advances through the game.
+
 Time-based Events: Timed challenges are incorporated to increase difficulty, forcing players to think quickly and accurately.
+
 User Interface (UI): Features buttons, status indicators, and feedback messages that guide the player’s progress.
 
 **Tools Used:** Game Engine - Godot 4
