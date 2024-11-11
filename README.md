@@ -1,7 +1,9 @@
 **A 2D game project called Master Hacker: The Origin**
 
 
+
 **Members:**
+
 
 **Andre Victoria -** UI Designer & Lead Programmer
 
@@ -10,6 +12,7 @@
 **Brave Osio -** Documentation & Designer
 
 **Rayver Punzalan -** UI Designer
+
 
 
 **Game Overview:**
