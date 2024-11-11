@@ -4,8 +4,11 @@
 **Members:**
 
 **Andre Victoria -** UI Designer & Lead Programmer
+
 **Karl Rosales -** UI Designer
+
 **Brave Osio -** Documentation & Designer
+
 **Rayver Punzalan -** UI Designer
 
 
