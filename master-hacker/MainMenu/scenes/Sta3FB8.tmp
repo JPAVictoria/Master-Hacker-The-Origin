@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq64ggfb37l52"]
+
+[ext_resource type="Script" path="res://scripts/parallax_background.gd" id="1_pxtow"]
+[ext_resource type="Texture2D" uid="uid://b0lwhns4sltlo" path="res://backgrounds/background 3/origbig.png" id="2_8ntym"]
+
+[sub_resource type="GDScript" id="GDScript_or8dt"]
+
+[sub_resource type="GDScript" id="GDScript_q0pyh"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="StartScene" type="Node2D"]
+script = SubResource("GDScript_or8dt")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_pxtow")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2304, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("2_8ntym")
+centered = false
+region_rect = Rect2(0, 0, 1152, 648)
+script = SubResource("GDScript_q0pyh")

@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgi5dd75f0qxf"]
+
+[ext_resource type="Script" path="res://MainMenu/scripts/audio/bgm.gd" id="1_bo3w7"]
+[ext_resource type="AudioStream" uid="uid://c24lx7copxyxn" path="res://MainMenu/music/menubgm.mp3" id="2_t1l4m"]
+[ext_resource type="AudioStream" uid="uid://dtd0drve74kn7" path="res://MainGame/sounds/iceball.wav" id="4_e44dh"]
+[ext_resource type="AudioStream" uid="uid://brg3eatpqif66" path="res://MainMenu/music/Menu_Select_00.mp3" id="4_ernu0"]
+[ext_resource type="AudioStream" uid="uid://ccld4mc2a85u3" path="res://Dialouge/sounds/winsound.mp3" id="5_6yfh4"]
+[ext_resource type="AudioStream" uid="uid://cgpa2h3dfdd4" path="res://Dialouge/sounds/losesound.mp3" id="6_vdrce"]
+
+[sub_resource type="GDScript" id="GDScript_ttc8s"]
+script/source = "extends AudioStreamPlayer2D
+
+func play_heart_loss_sound(sound: AudioStream) -> void:
+	stream = sound  # Set the audio stream to play
+	play()           # Play the sound
+"
+
+[node name="AudioManager" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_bo3w7")
+lose_sound = ExtResource("6_vdrce")
+
+[node name="BGMPlayer" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("2_t1l4m")
+bus = &"music"
+
+[node name="HeartLoss" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("4_e44dh")
+script = SubResource("GDScript_ttc8s")
+
+[node name="CursorSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("4_ernu0")
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("5_6yfh4")
+
+[node name="LoseSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("6_vdrce")

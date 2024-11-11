@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpufvng4cvav3"]
+
+[ext_resource type="Script" path="res://OpeningScene/opening_scene.gd" id="1_lpicp"]
+[ext_resource type="VideoStream" path="res://OpeningScene/OpeningScene.ogv" id="1_vs4kd"]
+[ext_resource type="Script" path="res://OpeningScene/openingscenescript.gd" id="2_3srh8"]
+[ext_resource type="Texture2D" uid="uid://byotn4exry81s" path="res://OpeningScene/ButtonsKIP/8.png" id="3_2uccx"]
+[ext_resource type="Texture2D" uid="uid://bvi8jpwhr1ku2" path="res://OpeningScene/ButtonsKIP/9.png" id="4_1ew6k"]
+
+[sub_resource type="Animation" id="Animation_d788l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkipButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rvbuf"]
+resource_name = "fade_in"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkipButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(6, 8.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7fqfk"]
+_data = {
+"RESET": SubResource("Animation_d788l"),
+"fade_in": SubResource("Animation_rvbuf")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lpicp")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_vs4kd")
+autoplay = true
+script = ExtResource("2_3srh8")
+
+[node name="SkipButton" type="TextureButton" parent="VideoStreamPlayer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.368
+anchor_bottom = 0.451
+offset_left = 1741.0
+offset_top = 875.0
+offset_right = 1109.34
+offset_bottom = 511.176
+texture_normal = ExtResource("3_2uccx")
+texture_pressed = ExtResource("4_1ew6k")
+texture_hover = ExtResource("4_1ew6k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../VideoStreamPlayer")
+libraries = {
+"": SubResource("AnimationLibrary_7fqfk")
+}
+
+[connection signal="pressed" from="VideoStreamPlayer/SkipButton" to="VideoStreamPlayer" method="_on_skip_button_pressed"]

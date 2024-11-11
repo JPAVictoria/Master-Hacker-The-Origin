@@ -1,0 +1,381 @@
+[gd_scene load_steps=37 format=3 uid="uid://dlujtydshy8ba"]
+
+[ext_resource type="Script" path="res://MainGame/scripts/mainlogic.gd" id="1_jg012"]
+[ext_resource type="Texture2D" uid="uid://b11qgkmec3n4t" path="res://MainGame/Screen/screen2.png" id="1_rggdm"]
+[ext_resource type="Texture2D" uid="uid://ddtt2vypvxepq" path="res://MainGame/New Buttons/normal (2).png" id="2_qdsut"]
+[ext_resource type="Texture2D" uid="uid://do54udv67o0xv" path="res://MainGame/New Buttons/blue-normal-removebg-preview.png" id="3_38wik"]
+[ext_resource type="Texture2D" uid="uid://d2wo8gowy12v7" path="res://MainGame/tiles/normal (2).png" id="4_mkabw"]
+[ext_resource type="Texture2D" uid="uid://buqm1wuap635i" path="res://MainGame/New Buttons/green-normal-removebg-preview.png" id="4_q3a67"]
+[ext_resource type="Texture2D" uid="uid://u8hkltot2lpn" path="res://MainGame/New Buttons/red-normal-removebg-preview.png" id="5_dswfl"]
+[ext_resource type="Texture2D" uid="uid://d4hn6l6fd5itu" path="res://MainGame/tiles/normal-pressed (2).png" id="5_v8sbi"]
+[ext_resource type="Texture2D" uid="uid://hglyk02bqvrg" path="res://MainGame/heart panel/HeartLoss.png" id="6_4r73h"]
+[ext_resource type="AudioStream" uid="uid://dtd0drve74kn7" path="res://MainGame/sounds/iceball.wav" id="7_j8wbs"]
+[ext_resource type="Texture2D" uid="uid://dgrxcqxu2ge4x" path="res://MainGame/heart panel/HeartFull.png" id="8_84d2r"]
+[ext_resource type="PackedScene" uid="uid://ovpe4r53eupc" path="res://Dialouge/DialougeScene/DialougeSceneWin.tscn" id="8_yuc1s"]
+[ext_resource type="Texture2D" uid="uid://bfxiy4paq64f5" path="res://MainGame/ProgressbarPics/0-removebg-preview.png" id="9_djk57"]
+[ext_resource type="Texture2D" uid="uid://bkcakpgpiina8" path="res://MainGame/ProgressbarPics/1-removebg-preview.png" id="9_ug5a8"]
+[ext_resource type="Texture2D" uid="uid://oj183umdkcya" path="res://MainGame/buttonsPng/settings-removebg-preview.png" id="10_1a4ge"]
+[ext_resource type="Texture2D" uid="uid://beuhg4oet8575" path="res://MainGame/ProgressbarPics/2-removebg-preview.png" id="10_4ecfo"]
+[ext_resource type="Texture2D" uid="uid://bq6e5jcay4ksx" path="res://MainGame/ProgressbarPics/3-removebg-preview.png" id="11_lge01"]
+[ext_resource type="Texture2D" uid="uid://c46s2u40bf58k" path="res://MainGame/buttonsPng/settings-hovered.png" id="11_nyqrg"]
+[ext_resource type="Texture2D" uid="uid://2wxe5ihtvxl1" path="res://MainGame/ProgressbarPics/4-removebg-preview.png" id="12_71yjw"]
+[ext_resource type="Texture2D" uid="uid://b22efowiaonm7" path="res://MainGame/ProgressbarPics/5-removebg-preview.png" id="13_7wbai"]
+[ext_resource type="Texture2D" uid="uid://bbo3eg7gy1i5r" path="res://MainGame/ProgressbarPics/6-removebg-preview.png" id="14_g6ve0"]
+[ext_resource type="Texture2D" uid="uid://e3vqiumvfvu4" path="res://MainGame/ProgressbarPics/7-removebg-preview.png" id="15_mou44"]
+[ext_resource type="Texture2D" uid="uid://cew4nfrx5oiri" path="res://MainGame/ProgressbarPics/8-removebg-preview.png" id="16_h2l5o"]
+[ext_resource type="FontFile" uid="uid://cqvun6cy3julc" path="res://Rubik_Glitch/RubikGlitch-Regular.ttf" id="16_xibyf"]
+[ext_resource type="Texture2D" uid="uid://dyorg30e21h5r" path="res://MainGame/ProgressbarPics/9-removebg-preview.png" id="17_tc6xv"]
+[ext_resource type="Texture2D" uid="uid://brg0n0mq0ypye" path="res://MainMenu/sprite_0.png" id="26_mmi54"]
+[ext_resource type="Theme" uid="uid://dyby5tywln10j" path="res://MainGame/themes/border.tres" id="27_lw7c0"]
+[ext_resource type="FontFile" uid="uid://tr1wgssxyukp" path="res://MainGame/FONTS/Pixellari.ttf" id="28_7gcqo"]
+[ext_resource type="Script" path="res://MainGame/progress_bar/h_slider.gd" id="29_0tw54"]
+
+[sub_resource type="Theme" id="Theme_agwbs"]
+
+[sub_resource type="GDScript" id="GDScript_s6jgt"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4hr2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srxf1"]
+bg_color = Color(0.6, 0.6, 0.6, 0.556863)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="Theme" id="Theme_dmkrr"]
+Button/styles/hover = SubResource("StyleBoxFlat_n4hr2")
+Button/styles/normal = SubResource("StyleBoxFlat_srxf1")
+
+[sub_resource type="GDScript" id="GDScript_axy52"]
+script/source = "extends Button
+"
+
+[sub_resource type="Theme" id="Theme_fqsfl"]
+Button/styles/hover = SubResource("StyleBoxFlat_n4hr2")
+Button/styles/normal = SubResource("StyleBoxFlat_srxf1")
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-52, -67)
+scale = Vector2(0.719999, 1)
+script = ExtResource("1_jg012")
+default_texture = ExtResource("2_qdsut")
+display_texture = ExtResource("3_38wik")
+correct_texture = ExtResource("4_q3a67")
+wrong_texture = ExtResource("5_dswfl")
+lost_heart_texture = ExtResource("6_4r73h")
+heart_sound = ExtResource("7_j8wbs")
+game_won_scene = ExtResource("8_yuc1s")
+progress_textures = Array[Texture2D]([ExtResource("9_djk57"), ExtResource("9_ug5a8"), ExtResource("10_4ecfo"), ExtResource("11_lge01"), ExtResource("12_71yjw"), ExtResource("13_7wbai"), ExtResource("14_g6ve0"), ExtResource("15_mou44"), ExtResource("16_h2l5o"), ExtResource("17_tc6xv")])
+
+[node name="Monitor" type="TextureRect" parent="."]
+offset_left = -834.723
+offset_top = -18.0
+offset_right = 7871.28
+offset_bottom = 4078.0
+scale = Vector2(0.518003, 0.350596)
+texture = ExtResource("1_rggdm")
+
+[node name="ProgressBar" type="TextureRect" parent="Monitor"]
+layout_mode = 0
+offset_left = 3541.92
+offset_top = 644.617
+offset_right = 3989.92
+offset_bottom = 765.617
+rotation = 0.00318182
+scale = Vector2(3.49089, 1.80539)
+texture = ExtResource("9_djk57")
+expand_mode = 1
+
+[node name="Tile1" type="TextureButton" parent="Monitor"]
+layout_mode = 0
+offset_left = 3579.46
+offset_top = 926.993
+offset_right = 3779.46
+offset_bottom = 1127.99
+scale = Vector2(2.29241, 2.07421)
+texture_normal = ExtResource("4_mkabw")
+texture_pressed = ExtResource("5_v8sbi")
+
+[node name="Tile2" type="TextureButton" parent="Monitor"]
+layout_mode = 0
+offset_left = 4088.89
+offset_top = 926.993
+offset_right = 4288.89
+offset_bottom = 1127.99
+scale = Vector2(2.29241, 2.07421)
+texture_normal = ExtResource("4_mkabw")
+texture_pressed = ExtResource("5_v8sbi")
+
+[node name="Tile3" type="TextureButton" parent="Monitor"]
+layout_mode = 0
+offset_left = 4595.65
+offset_top = 926.993
+offset_right = 4795.65
+offset_bottom = 1127.99
+scale = Vector2(2.29241, 2.07421)
+texture_normal = ExtResource("4_mkabw")
+texture_pressed = ExtResource("5_v8sbi")
+
+[node name="Tile4" type="TextureButton" parent="Monitor"]
+layout_mode = 0
+offset_left = 3579.46
+offset_top = 1383.36
+offset_right = 3779.46
+offset_bottom = 1584.36
+scale = Vector2(2.29241, 2.07421)
+texture_normal = ExtResource("4_mkabw")
+texture_pressed = ExtResource("5_v8sbi")
+
+[node name="Tile5" type="TextureButton" parent="Monitor"]
+layout_mode = 0
+offset_left = 4088.89
+offset_top = 1383.36
+offset_right = 4288.89
+offset_bottom = 1584.36
+scale = Vector2(2.29241, 2.07421)
+texture_normal = ExtResource("4_mkabw")
+texture_pressed = ExtResource("5_v8sbi")
+
+[node name="Tile6" type="TextureButton" parent="Monitor"]
+layout_mode = 0
+offset_left = 4595.65
+offset_top = 1383.36
+offset_right = 4795.65
+offset_bottom = 1584.36
+scale = Vector2(2.29241, 2.07421)
+texture_normal = ExtResource("4_mkabw")
+texture_pressed = ExtResource("5_v8sbi")
+
+[node name="Tile7" type="TextureButton" parent="Monitor"]
+layout_mode = 0
+offset_left = 3579.46
+offset_top = 1848.28
+offset_right = 3779.46
+offset_bottom = 2049.28
+scale = Vector2(2.29241, 2.07421)
+texture_normal = ExtResource("4_mkabw")
+texture_pressed = ExtResource("5_v8sbi")
+
+[node name="Tile8" type="TextureButton" parent="Monitor"]
+layout_mode = 0
+offset_left = 4088.89
+offset_top = 1848.28
+offset_right = 4288.89
+offset_bottom = 2049.28
+scale = Vector2(2.29241, 2.07421)
+texture_normal = ExtResource("4_mkabw")
+texture_pressed = ExtResource("5_v8sbi")
+
+[node name="Tile9" type="TextureButton" parent="Monitor"]
+layout_mode = 0
+offset_left = 4595.65
+offset_top = 1848.28
+offset_right = 4795.65
+offset_bottom = 2049.28
+scale = Vector2(2.29241, 2.07421)
+texture_normal = ExtResource("4_mkabw")
+texture_pressed = ExtResource("5_v8sbi")
+
+[node name="Heart3" type="TextureRect" parent="Monitor"]
+layout_mode = 0
+offset_left = 3107.56
+offset_top = 2156.33
+offset_right = 3395.56
+offset_bottom = 2404.33
+scale = Vector2(1.12272, 1.06712)
+texture = ExtResource("8_84d2r")
+
+[node name="Heart2" type="TextureRect" parent="Monitor"]
+layout_mode = 0
+offset_left = 2764.36
+offset_top = 2156.33
+offset_right = 3052.36
+offset_bottom = 2404.33
+scale = Vector2(1.12272, 1.06712)
+texture = ExtResource("8_84d2r")
+
+[node name="Heart1" type="TextureRect" parent="Monitor"]
+layout_mode = 0
+offset_left = 2405.07
+offset_top = 2156.33
+offset_right = 2693.07
+offset_bottom = 2404.33
+scale = Vector2(1.12272, 1.06712)
+texture = ExtResource("8_84d2r")
+
+[node name="Countdown" type="Panel" parent="Monitor"]
+layout_mode = 0
+offset_left = 5512.63
+offset_top = 658.878
+offset_right = 5552.63
+offset_bottom = 698.878
+scale = Vector2(15.1589, 5.28967)
+
+[node name="TimerLabeL" type="Label" parent="Monitor/Countdown"]
+layout_mode = 0
+offset_left = 15.2114
+offset_top = 0.539219
+offset_right = 55.2113
+offset_bottom = 23.5392
+scale = Vector2(0.485641, 1.6526)
+text = "00	"
+
+[node name="SettingsButton" type="TextureButton" parent="Monitor"]
+layout_mode = 0
+offset_left = 2399.71
+offset_top = 701.662
+offset_right = 2439.71
+offset_bottom = 741.662
+scale = Vector2(3.44162, 3.13697)
+theme = SubResource("Theme_agwbs")
+texture_normal = ExtResource("10_1a4ge")
+texture_hover = ExtResource("11_nyqrg")
+script = SubResource("GDScript_s6jgt")
+
+[node name="Control" type="Control" parent="Monitor"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1611.43
+offset_top = 51.3411
+offset_right = 1651.43
+offset_bottom = 91.3411
+
+[node name="CountdownLabel" type="Label" parent="Monitor/Control"]
+layout_mode = 0
+offset_left = 1308.44
+offset_top = 1252.15
+offset_right = 4153.44
+offset_bottom = 2961.15
+theme_override_fonts/font = ExtResource("16_xibyf")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Abdullah" type="Sprite2D" parent="Monitor"]
+position = Vector2(5770.03, 1902.47)
+scale = Vector2(1.32218, 1.16293)
+texture = ExtResource("26_mmi54")
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1133.33
+offset_top = 224.0
+offset_right = 1698.33
+offset_bottom = 831.0
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu"]
+layout_mode = 0
+offset_right = 298.0
+offset_bottom = 413.0
+scale = Vector2(1.89177, 1.47519)
+
+[node name="Panel" type="Panel" parent="PauseMenu/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("27_lw7c0")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 150.445
+offset_top = 90.0
+offset_right = 259.445
+offset_bottom = 120.0
+scale = Vector2(2.41715, 2.54237)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/PanelContainer2"]
+layout_mode = 2
+
+[node name="PAUSED" type="Label" parent="PauseMenu/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("28_7gcqo")
+theme_override_font_sizes/font_size = 29
+text = "PAUSED"
+
+[node name="PanelContainer3" type="PanelContainer" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 149.445
+offset_top = 206.0
+offset_right = 288.445
+offset_bottom = 303.0
+scale = Vector2(1.90189, 1.77493)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenu/PanelContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RESUME" type="Button" parent="PauseMenu/PanelContainer3/VBoxContainer2"]
+process_mode = 3
+layout_mode = 2
+theme = SubResource("Theme_dmkrr")
+theme_override_fonts/font = ExtResource("28_7gcqo")
+text = "RESUME"
+script = SubResource("GDScript_axy52")
+
+[node name="RESTART" type="Button" parent="PauseMenu/PanelContainer3/VBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_dmkrr")
+theme_override_fonts/font = ExtResource("28_7gcqo")
+text = "RESTART"
+
+[node name="QUIT" type="Button" parent="PauseMenu/PanelContainer3/VBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_fqsfl")
+theme_override_fonts/font = ExtResource("28_7gcqo")
+text = "QUIT"
+
+[node name="Label" type="Label" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 197.445
+offset_top = 411.0
+offset_right = 259.445
+offset_bottom = 434.0
+scale = Vector2(2.86276, 2.37761)
+theme_override_fonts/font = ExtResource("28_7gcqo")
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 133.445
+offset_top = 383.0
+offset_right = 289.445
+offset_bottom = 473.0
+scale = Vector2(1.84684, 1.84574)
+max_value = 1.0
+step = 0.001
+script = ExtResource("29_0tw54")
+bus_name = "Master"
+
+[connection signal="pressed" from="Monitor/Tile1" to="." method="_on_tile_1_pressed"]
+[connection signal="pressed" from="Monitor/Tile2" to="." method="_on_tile_2_pressed"]
+[connection signal="pressed" from="Monitor/Tile3" to="." method="_on_tile_3_pressed"]
+[connection signal="pressed" from="Monitor/Tile4" to="." method="_on_tile_4_pressed"]
+[connection signal="pressed" from="Monitor/Tile5" to="." method="_on_tile_5_pressed"]
+[connection signal="pressed" from="Monitor/Tile6" to="." method="_on_tile_6_pressed"]
+[connection signal="pressed" from="Monitor/Tile7" to="." method="_on_tile_7_pressed"]
+[connection signal="pressed" from="Monitor/Tile8" to="." method="_on_tile_8_pressed"]
+[connection signal="pressed" from="Monitor/Tile9" to="." method="_on_tile_9_pressed"]
+[connection signal="pressed" from="Monitor/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PauseMenu/PanelContainer3/VBoxContainer2/RESUME" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/PanelContainer3/VBoxContainer2/RESTART" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseMenu/PanelContainer3/VBoxContainer2/QUIT" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="PauseMenu/HSlider" to="PauseMenu/HSlider" method="_on_value_changed"]

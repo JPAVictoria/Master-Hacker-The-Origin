@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://ovpe4r53eupc"]
+
+[ext_resource type="Script" path="res://Dialouge/scripts/win.gd" id="1_jn5qt"]
+[ext_resource type="Script" path="res://MainMenu/scripts/mainscene/parallax_background.gd" id="1_q1ci1"]
+[ext_resource type="Texture2D" uid="uid://b0lwhns4sltlo" path="res://MainMenu/backgrounds/background 3/origbig.png" id="2_5vyt2"]
+[ext_resource type="Texture2D" uid="uid://b8bkn708dspxo" path="res://MainMenu/backgrounds/background 4/origbig.png" id="2_xr8y5"]
+[ext_resource type="Texture2D" uid="uid://bvhinigfn6iqb" path="res://Dialouge/dbackgroundday/13.png" id="3_x1ar2"]
+[ext_resource type="Texture2D" uid="uid://dtw3yw104muh8" path="res://Dialouge/DIALOUGE BUTTONS/16.png" id="6_b0ag7"]
+[ext_resource type="Texture2D" uid="uid://dl2eoyqfgi8xw" path="res://Dialouge/DIALOUGE BUTTONS/17.png" id="7_spebf"]
+[ext_resource type="Texture2D" uid="uid://c017x60xwyo4d" path="res://Dialouge/DIALOUGE BUTTONS/18.png" id="8_hehvh"]
+[ext_resource type="Texture2D" uid="uid://cxk8mahk6v43t" path="res://Dialouge/DIALOUGE BUTTONS/19.png" id="9_mdqpw"]
+[ext_resource type="AudioStream" uid="uid://ccld4mc2a85u3" path="res://Dialouge/sounds/winsound.mp3" id="9_uqwex"]
+
+[sub_resource type="GDScript" id="GDScript_w2eju"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jn5qt")
+day_image = ExtResource("2_xr8y5")
+night_image = ExtResource("2_5vyt2")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_q1ci1")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2304, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(1, 0.993056)
+texture = ExtResource("2_5vyt2")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2304, 1296)
+script = SubResource("GDScript_w2eju")
+
+[node name="DialougeBG" type="TextureRect" parent="."]
+offset_left = 256.0
+offset_top = -39.0
+offset_right = 1574.0
+offset_bottom = 1098.0
+texture = ExtResource("3_x1ar2")
+expand_mode = 1
+
+[node name="HomeButton" type="TextureButton" parent="."]
+offset_left = 848.0
+offset_top = 419.0
+offset_right = 1463.0
+offset_bottom = 856.0
+texture_normal = ExtResource("6_b0ag7")
+texture_pressed = ExtResource("7_spebf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RetryButton" type="TextureButton" parent="."]
+offset_left = 388.0
+offset_top = 410.0
+offset_right = 1000.0
+offset_bottom = 859.0
+texture_normal = ExtResource("8_hehvh")
+texture_pressed = ExtResource("9_mdqpw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_uqwex")
+volume_db = 10.895
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

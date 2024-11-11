@@ -1,0 +1,95 @@
+[gd_scene load_steps=16 format=3 uid="uid://dhnhyx3twdbsm"]
+
+[ext_resource type="Script" path="res://MainMenu/scripts/instructions/isntructions main.gd" id="1_xykec"]
+[ext_resource type="Texture2D" uid="uid://b8bkn708dspxo" path="res://MainMenu/backgrounds/background 4/origbig.png" id="2_xsskv"]
+[ext_resource type="Script" path="res://MainMenu/scripts/mainscene/parallax_background.gd" id="4_wu4iu"]
+[ext_resource type="Texture2D" uid="uid://b0lwhns4sltlo" path="res://MainMenu/backgrounds/background 3/origbig.png" id="5_p0llq"]
+[ext_resource type="Texture2D" uid="uid://dsj2tntx70xxh" path="res://MainMenu/instructionsUI/Instructions1.png" id="6_04b0j"]
+[ext_resource type="Texture2D" uid="uid://0a6tjqvjpo01" path="res://MainMenu/buttons/advanceDefault.png" id="7_n34jd"]
+[ext_resource type="Texture2D" uid="uid://cf6k058j5ohgx" path="res://MainMenu/buttons/advancePressed.png" id="8_8llq7"]
+[ext_resource type="Script" path="res://MainMenu/scripts/instructions/advance_button.gd" id="8_qndux"]
+[ext_resource type="Texture2D" uid="uid://dcq71ow86itq3" path="res://MainMenu/buttons/backDefault.png" id="9_l8dko"]
+[ext_resource type="Texture2D" uid="uid://cs3lpfnap22je" path="res://MainMenu/buttons/backPressed.png" id="10_8yoi4"]
+[ext_resource type="Script" path="res://MainMenu/scripts/instructions/previous_button.gd" id="10_tk0sf"]
+[ext_resource type="AudioStream" uid="uid://brg3eatpqif66" path="res://MainMenu/music/Menu_Select_00.mp3" id="12_fhtst"]
+[ext_resource type="Material" uid="uid://6fe2bov4atrh" path="res://new_shader_material.tres" id="13_pht8l"]
+[ext_resource type="VideoStream" path="res://Instructionsss/2.ogv" id="14_c55md"]
+
+[sub_resource type="GDScript" id="GDScript_2qgx4"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Node2D" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_xykec")
+day_image = ExtResource("2_xsskv")
+night_image = ExtResource("5_p0llq")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("4_wu4iu")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2304, 0)
+
+[node name="BackgroundDynamic" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("5_p0llq")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2304, 1296)
+script = SubResource("GDScript_2qgx4")
+
+[node name="Instruction1" type="Sprite2D" parent="."]
+position = Vector2(972, 539)
+scale = Vector2(0.6745, 0.67125)
+texture = ExtResource("6_04b0j")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+material = ExtResource("13_pht8l")
+offset_left = 297.0
+offset_top = 2.0
+offset_right = 1647.0
+offset_bottom = 1074.0
+stream = ExtResource("14_c55md")
+expand = true
+loop = true
+
+[node name="AdvanceButton" type="TextureButton" parent="."]
+offset_left = 1429.0
+offset_top = 837.0
+offset_right = 1509.0
+offset_bottom = 906.0
+texture_normal = ExtResource("7_n34jd")
+texture_pressed = ExtResource("8_8llq7")
+texture_hover = ExtResource("8_8llq7")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("8_qndux")
+
+[node name="PreviousButton" type="TextureButton" parent="."]
+offset_left = 426.0
+offset_top = 840.0
+offset_right = 512.0
+offset_bottom = 909.0
+texture_normal = ExtResource("9_l8dko")
+texture_pressed = ExtResource("10_8yoi4")
+texture_hover = ExtResource("10_8yoi4")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("10_tk0sf")
+
+[node name="ClickButtonSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(734, 435)
+stream = ExtResource("12_fhtst")
+
+[connection signal="pressed" from="AdvanceButton" to="." method="_on_advance_button_pressed"]
+[connection signal="pressed" from="PreviousButton" to="." method="_on_previous_button_pressed"]
